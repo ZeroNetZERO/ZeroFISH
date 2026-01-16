@@ -1,7 +1,7 @@
 -- ZeroX Fish It - Remade from WindUI
 -- Premium Version
 
-local ZeroX = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeroNetZERO/ZeroFISH/main/Library.lua"))() 
+local ZeroX = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeroNetZERO/ZeroFISH/refs/heads/main/Library.lua"))() 
 -- OR use local: local ZeroX = loadfile("Library.lua")()
 
 local HttpService = game:GetService("HttpService")
