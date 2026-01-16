@@ -466,7 +466,7 @@ end
 -- ==================== UI SECTIONS ====================
 
 -- Fishing Support Section
-local FishSupport = Tabs:AddSection("Fishing Support", true)
+local FishSupport = Tabs:AddSection("Fishing Support", false)
 
 FishSupport:AddToggle({
     Title = "Walk On Water",
@@ -554,7 +554,7 @@ FishSupport:AddToggle({
 })
 
 -- Auto Fishing Section
-local AutoFish = Tabs:AddSection("Auto Fishing", true)
+local AutoFish = Tabs:AddSection("Auto Fishing", false)
 
 AutoFish:AddSlider({
     Title = "Legit Click Speed",
@@ -579,7 +579,7 @@ AutoFish:AddToggle({
 })
 
 -- Instant Fishing Section
-local InstantFish = Tabs:AddSection("Instant Fishing", true)
+local InstantFish = Tabs:AddSection("Instant Fishing", false)
 
 InstantFish:AddInput({
     Title = "Complete Delay",
@@ -611,7 +611,7 @@ InstantFish:AddToggle({
 })
 
 -- Blatant V1 Section
-local BlatantV1 = Tabs:AddSection("BlatantV1 Fishing", true)
+local BlatantV1 = Tabs:AddSection("BlatantV1 Fishing", false)
 
 BlatantV1:AddInput({
     Title = "Cast Delay",
@@ -651,7 +651,7 @@ BlatantV1:AddToggle({
 })
 
 -- Blatant V2 Section
-local BlatantV2 = Tabs:AddSection("BlatantV2 Fishing", true)
+local BlatantV2 = Tabs:AddSection("BlatantV2 Fishing", false)
 
 BlatantV2:AddInput({
     Title = "Bait Delay",
@@ -853,7 +853,7 @@ local function RunAutoUnfavoriteLoop()
 end
 
 -- Auto Favorite Section
-local FavSection = Tabs:AddSection("Auto Favorite/Unfavorite", true)
+local FavSection = Tabs:AddSection("Auto Favorite/Unfavorite", false)
 
 FavSection:AddDropdown({
     Title = "by Rarity",
@@ -986,7 +986,7 @@ local function RunAutoSellLoop()
     end)
 end
 
-local SellSection = Tabs:AddSection("Autosell Fish", true)
+local SellSection = Tabs:AddSection("Autosell Fish", false)
 
 SellSection:AddDropdown({
     Title = "Select Method",
@@ -1018,7 +1018,7 @@ task.spawn(function()
     while true do
         if fishCountParagraph and GetPlayerDataReplion() then
             local count = GetFishCount()
-            pcall(function() fishCountParagraph:SetContent("Count: " .. tostring(count)) end)
+            pcall(function() fishCountParagraph:SetTitle("Current Fish Count: " .. tostring(count)) end)
         end
         task.wait(1)
     end
@@ -1050,7 +1050,7 @@ local DEFAULT_JUMP = 50
 local currentSpeed = DEFAULT_SPEED
 local currentJump = DEFAULT_JUMP
 
-local MovementSection = PlayerTab:AddSection("Movement", true)
+local MovementSection = PlayerTab:AddSection("Movement", false)
 
 MovementSection:AddSlider({
     Title = "WalkSpeed",
@@ -1116,7 +1116,7 @@ MovementSection:AddToggle({
 })
 
 -- Abilities Section
-local AbilitySection = PlayerTab:AddSection("Abilities", true)
+local AbilitySection = PlayerTab:AddSection("Abilities", false)
 
 AbilitySection:AddToggle({
     Title = "Infinite Jump",
@@ -1232,7 +1232,7 @@ AbilitySection:AddToggle({
 })
 
 -- Other Section
-local OtherSection = PlayerTab:AddSection("Other", true)
+local OtherSection = PlayerTab:AddSection("Other", false)
 
 local customName = "ZeroXUser"
 local customLevel = "Lvl. 01"
@@ -1271,7 +1271,7 @@ OtherSection:AddToggle({
                 for _, plr in ipairs(game.Players:GetPlayers()) do
                     if plr.Character then
                         local hum = plr.Character:FindFirstChild("Humanoid")
-                        if hum and hum.DisplayName ~= customName then
+                        if hum then
                             hum.DisplayName = customName
                         end
                     end
@@ -1346,7 +1346,7 @@ local function GetTargetHRP(playerName)
     return nil
 end
 
-local TelePlayerSection = TeleportTab:AddSection("Teleport to Player", true)
+local TelePlayerSection = TeleportTab:AddSection("Teleport to Player", false)
 
 TelePlayerSection:AddDropdown({
     Title = "Select Target Player",
@@ -1385,7 +1385,7 @@ TelePlayerSection:AddButton({
     end
 })
 
-local TeleAreaSection = TeleportTab:AddSection("Teleport to Area", true)
+local TeleAreaSection = TeleportTab:AddSection("Teleport to Area", false)
 
 TeleAreaSection:AddDropdown({
     Title = "Select Target Area",
@@ -1413,7 +1413,7 @@ TeleAreaSection:AddButton({
 -- ==================== SETTINGS TAB ====================
 local SettingsTab = Window:AddTab({ Name = "Settings", Icon = "menu" })
 
-local MiscSection = SettingsTab:AddSection("MISC", true)
+local MiscSection = SettingsTab:AddSection("MISC", false)
 
 MiscSection:AddToggle({
     Title = "FPS Ultra Boost",
@@ -1522,7 +1522,7 @@ MiscSection:AddToggle({
     end
 })
 
-local UtilitySection = SettingsTab:AddSection("Utility", true)
+local UtilitySection = SettingsTab:AddSection("Utility", false)
 
 local RF_UnequipOxygenTank = GetRemote("RF/UnequipOxygenTank")
 local RF_EquipOxygenTank = GetRemote("RF/EquipOxygenTank")
