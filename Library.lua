@@ -86,7 +86,7 @@ local Icons = {
 
 local LucideIcons = {}
 pcall(function()
-    LucideIcons = loadstring(game:HttpGet("https://raw.githubusercontent.com/ZeroNetZERO/ZeroFISH/refs/heads/main/icon.lua"))()
+    LucideIcons = loadstring(game:HttpGet("https://raw.githubusercontent.com/a11bove/kdoaz/refs/heads/main/src/icons.lua"))()
 end)
 
 local function GetIcon(iconName)
@@ -846,7 +846,7 @@ function ZeroX:Window(GuiConfig)
         Title.Position = UDim2.new(0, 0, 0, 4)
         Title.BackgroundTransparency = 1
         Title.Font = Enum.Font.GothamBold
-        Title.Text = "Aikoware"
+        Title.Text = "ZeroX"
         Title.TextSize = 22
         Title.TextColor3 = Color3.fromRGB(255, 255, 255)
         Title.ZIndex = 52
@@ -1629,6 +1629,11 @@ end
     function ParagraphFunc:SetContent(content)
         content = content or "Content"
         ParagraphContent.Text = content
+    end
+
+    function ParagraphFunc:SetTitle(title)
+        title = title or "Title"
+        ParagraphTitle.Text = title
     end
 
     CountItem = CountItem + 1
